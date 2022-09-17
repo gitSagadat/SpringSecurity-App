@@ -27,8 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
         //Here we are configure Spring Security
         //Here we also will configure authorization
-        http.csrf().disable()
-                .authorizeRequests()
+            http.authorizeRequests()
                 .antMatchers("/auth/login","/auth/registration","/error").permitAll()
                 .anyRequest().authenticated()
          .and()

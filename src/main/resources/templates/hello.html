@@ -10,7 +10,10 @@
 <div>Hello Spring Security</div>
 <br/>
 <div>
-<a href="/logout">Logout</a>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" th:value="Logout">
+</form>
+
 </div>
 </body>
 </html>
