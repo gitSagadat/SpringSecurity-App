@@ -28,6 +28,9 @@ public class Person {
     @Column(name = "year_of_birth")
     private int yearOfBirth;
 
+    @Column(name = "role")
+    private String role;
+
     public Person(){}
 
     public Person(String username, int yearOfBirth) {this.username = username;this.yearOfBirth = yearOfBirth;}
@@ -39,6 +42,14 @@ public class Person {
     public void setPassword(String password) {this.password = password;}
     public int getYearOfBirth() {return yearOfBirth;}
     public void setYearOfBirth(int yearOfBirth) {this.yearOfBirth = yearOfBirth;}
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     @Override
     public String toString() {

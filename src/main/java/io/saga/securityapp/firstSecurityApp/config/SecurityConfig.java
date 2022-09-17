@@ -28,8 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //Here we are configure Spring Security
         //Here we also will configure authorization
             http.authorizeRequests()
+                .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/auth/login","/auth/registration","/error").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().hasAnyRole("USER","ADMIN")
          .and()
                 .formLogin().loginPage("/auth/login")
                 .loginProcessingUrl("/process_login")

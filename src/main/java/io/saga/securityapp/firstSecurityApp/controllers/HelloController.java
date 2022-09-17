@@ -22,4 +22,8 @@ public class HelloController {
 
         return "Hello";
     }
+    @GetMapping("/admin")
+    public String adminPage(){
+        return "admin";
+    }
 }
