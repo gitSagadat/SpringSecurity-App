@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Person")
@@ -47,5 +48,18 @@ public class Person {
                 ", password='" + password + '\'' +
                 ", yearOfBirth=" + yearOfBirth +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && yearOfBirth == person.yearOfBirth && Objects.equals(username, person.username) && Objects.equals(password, person.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, password, yearOfBirth);
     }
 }

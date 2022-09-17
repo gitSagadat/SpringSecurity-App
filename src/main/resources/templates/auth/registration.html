@@ -15,15 +15,13 @@
     <input type="text" th:field="*{password}" id="password">
     <div style="color: darkred" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
     <br/>
-    <label for="password"> Write password: </label>
+    <label for="yearOfBirth"> Year of Birth: </label>
     <input type="text" th:field="*{yearOfBirth}" id="yearOfBirth">
     <div style="color: darkred" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">
         Year of Birth Error</div>
     <br/>
-    <input type="submit" value="Login">
-    <div th:if="${param.error}" style="color: red">
-        UserId or Password Incorrect!
-    </div>
+    <input type="submit" value="Sign Up">
+
 </form>
 
 
